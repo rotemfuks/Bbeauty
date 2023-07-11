@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "name": "rotem fuks",
+      "email": "bar74064@gmail.com",
+      "phone": "0547424641",
+      "password": "123456789",
+      "isAdmin": true,
+      "id": 1
+    },
+    {
+      "name": "israel israeli",
+      "email": "israel@gmail.com",
+      "phone": "0522222222",
+      "password": "987654321",
+      "isAdmin": false,
+      "id": 2
+    },
+    {
+      "name": "bar fuks",
+      "email": "bar@emial.ovjhg",
+      "password": "685839299499764",
+      "phone": "056993929299466",
+      "id": 3
+    }
+  ]
+}
