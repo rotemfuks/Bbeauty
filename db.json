@@ -35,6 +35,16 @@
       "address": "bla bla bla bla",
       "isAdmin": false,
       "id": 4
+    },
+    {
+      "name": "esek",
+      "email": "es@dsfsd.ffd",
+      "password": "12345678",
+      "phone": "12345678",
+      "address": "plaoksa kals aksld",
+      "isBusiness": true,
+      "isAdmin": false,
+      "id": 5
     }
   ]
 }

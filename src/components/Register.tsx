@@ -6,22 +6,21 @@ import { addUser, checkUser } from "../services/userService";
 import { errorMsg, successMsg } from "../services/feedbacksService";
 import User from "../interfaces/User";
 import { LoginContext } from "../context/LoginContext";
+import { Form } from "react-bootstrap";
 
-interface RegisterProps {
-  
-}
+interface RegisterProps {}
 const Register: FunctionComponent<RegisterProps> = () => {
   const { setUser } = useContext(LoginContext);
 
-  const setUserInfo = (x: any) => {};
-  let navigate = useNavigate();
-  let formik = useFormik({
+  const navigate = useNavigate();
+  const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
       password: "",
       phone: "",
       address: "",
+      isBusiness: 0,
     },
     validationSchema: yup.object({
       name: yup.string().required().min(4),
@@ -32,7 +31,11 @@ const Register: FunctionComponent<RegisterProps> = () => {
     }),
 
     onSubmit(values) {
-      addUser({ ...values, isAdmin: false } as User)
+      addUser({
+        ...values,
+        isBusiness: Boolean(values.isBusiness),
+        isAdmin: false,
+      })
         .then((res) => {
           navigate("/home");
           successMsg(`${values.email} wes registered and logged in`);
@@ -137,6 +140,15 @@ const Register: FunctionComponent<RegisterProps> = () => {
             {formik.touched.address && formik.errors.address && (
               <small className="text-danger">{formik.errors.address} </small>
             )}
+
+            <Form.Check
+              type="checkbox"
+              label="Sign as Business"
+              value={formik.values.isBusiness}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              name="isBusiness"
+            />
           </div>
           <button
             type="submit"
