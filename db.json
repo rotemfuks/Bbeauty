@@ -6,7 +6,7 @@
       "phone": "0547424641",
       "password": "123456789",
       "isAdmin": true,
-      "isbusiness":false,
+      "isbusiness": false,
       "id": 1
     },
     {
@@ -15,7 +15,7 @@
       "phone": "0522222222",
       "password": "987654321",
       "isAdmin": false,
-      "isbusiness":true,
+      "isbusiness": true,
       "id": 2
     },
     {
@@ -24,8 +24,17 @@
       "password": "685839299499764",
       "phone": "056993929299466",
       "isAdmin": false,
-      "isbusiness":false,
+      "isbusiness": false,
       "id": 3
+    },
+    {
+      "name": "Ofir",
+      "email": "bla@email.com",
+      "password": "12345678",
+      "phone": "123",
+      "address": "bla bla bla bla",
+      "isAdmin": false,
+      "id": 4
     }
   ]
 }

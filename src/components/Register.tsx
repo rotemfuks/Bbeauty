@@ -1,16 +1,17 @@
 import { useFormik } from "formik";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { addUser, checkUser } from "../services/userService";
 import { errorMsg, successMsg } from "../services/feedbacksService";
 import User from "../interfaces/User";
+import { LoginContext } from "../context/LoginContext";
 
 interface RegisterProps {
   
 }
 const Register: FunctionComponent<RegisterProps> = () => {
-
+  const { setUser } = useContext(LoginContext);
 
   const setUserInfo = (x: any) => {};
   let navigate = useNavigate();
@@ -34,17 +35,9 @@ const Register: FunctionComponent<RegisterProps> = () => {
       addUser({ ...values, isAdmin: false } as User)
         .then((res) => {
           navigate("/home");
-
-          sessionStorage.setItem(
-            "userInfo",
-            JSON.stringify({
-              email: res.data.email,
-              isAdmin: res.data.isAdmin,
-              userId: res.data.id,
-            })
-          );
-          setUserInfo(JSON.parse(sessionStorage.getItem("userInfo") as string));
           successMsg(`${values.email} wes registered and logged in`);
+
+          setUser(res.data);
         })
         .catch((err) => console.log(err));
     },
