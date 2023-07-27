@@ -7,8 +7,8 @@ import Register from "./components/Register";
 import { Navigation } from "./components/Navigation";
 import { useContext } from "react";
 
-import './styles/main.scss';
-import styles from './App.module.scss';
+import "./styles/main.scss";
+import styles from "./App.module.scss";
 import { ThemeContext } from "./context/ThemeContext";
 import Favorites from "./components/Favorites";
 import { About } from "./components/About";
@@ -22,18 +22,17 @@ function App() {
       <ToastContainer />
       <Router>
         <Navigation />
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/register"
-            element={<Register />}
-          />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/cards" element={<Cards />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="*" element={<PageNotFound />}></Route>
-        </Routes>
+        <div className={styles.pageContent}>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/cards" element={<Cards />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="*" element={<PageNotFound />}></Route>
+          </Routes>
+        </div>
       </Router>
     </div>
   );

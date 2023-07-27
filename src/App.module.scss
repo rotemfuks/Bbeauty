@@ -1,5 +1,11 @@
 .app {
     min-height: 100vh;
+
+    .pageContent {
+        max-width: 55rem;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
 }
 
 .app.dark {
