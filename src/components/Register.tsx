@@ -4,11 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { addUser, checkUser } from "../services/userService";
 import { errorMsg, successMsg } from "../services/feedbacksService";
+import User from "../interfaces/User";
 
 interface RegisterProps {
-  setUserInfo: Function;
+  
 }
-const Register: FunctionComponent<RegisterProps> = ({ setUserInfo }) => {
+const Register: FunctionComponent<RegisterProps> = () => {
+
+
+  const setUserInfo = (x: any) => {};
   let navigate = useNavigate();
   let formik = useFormik({
     initialValues: {
@@ -27,7 +31,7 @@ const Register: FunctionComponent<RegisterProps> = ({ setUserInfo }) => {
     }),
 
     onSubmit(values) {
-      addUser({ ...values, isAdmin: false })
+      addUser({ ...values, isAdmin: false } as User)
         .then((res) => {
           navigate("/home");
 

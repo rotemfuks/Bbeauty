@@ -1,41 +1,31 @@
 import { useFormik } from "formik";
-import { FunctionComponent, useState } from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { checkUser } from "../services/userService";
 import { errorMsg, successMsg } from "../services/feedbacksService";
+import { LoginContext } from "../context/LoginContext";
+import User from "../interfaces/User";
 
-interface LoginProps {
-  setUserInfo: Function;
-}
 
-const Login: FunctionComponent<LoginProps> = ({ setUserInfo }) => {
-  let navigate = useNavigate();
-  let formik = useFormik({
+function Login() {
+  const { setUser } = useContext(LoginContext);
+  const navigate = useNavigate();
+  const formik = useFormik({
     initialValues: { email: "", password: "" },
     validationSchema: yup.object({
       email: yup.string().required().email(),
       password: yup.string().required().min(8),
     }),
     onSubmit(values) {
-      checkUser(values)
+      checkUser(values as User)
         .then((res) => {
           if (res.data.length) {
             navigate("/home");
             successMsg(`youre logged in as ${values.email}`);
 
-            sessionStorage.setItem(
-              "userInfo",
-              JSON.stringify({
-                email: res.data[0].email,
-                isAdmin: res.data[0].isAdmin,
-                userId: res.data[0].id,
-              })
-            );
+            setUser(res.data[0]);
 
-            setUserInfo(
-              JSON.parse(sessionStorage.getItem("userInfo") as string)
-            );
           } else errorMsg("wrong email or password");
         })
         .catch((err) => console.log(err));

@@ -1,19 +1,23 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { Nav, Navbar } from "react-bootstrap";
+import { Button, Nav, Navbar } from "react-bootstrap";
 
 import styles from "./Navigation.module.scss";
 import { ThemeButton } from "./ThemeButton";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LoginContext } from "../context/LoginContext";
 
-interface NavbarProps {
-  userInfo: any;
-  setUserInfo: Function;
-}
-
-export function Navigation({ userInfo, setUserInfo }: NavbarProps) {
+export function Navigation() {
   const [isExpended, setIsExpended] = useState(false);
   const toggleIsExpended = () => {
     setIsExpended((prevState) => !prevState);
+  };
+
+  const navigate = useNavigate();
+  const { user, logout } = useContext(LoginContext);
+
+  const onLogoutClick = () => {
+    logout();
+    navigate("/login");
   };
 
   return (
@@ -30,19 +34,19 @@ export function Navigation({ userInfo, setUserInfo }: NavbarProps) {
             About
           </Nav.Link>
 
-          {userInfo && (
+          {user && (
             <>
               <Nav.Link as={NavLink} to="/favorites">
                 Favorites
               </Nav.Link>
 
-              {userInfo.isbusiness || userInfo.isAdmin ? (
+              {user.isBusiness || user.isAdmin ? (
                 <Nav.Link as={NavLink} to="/cards">
                   My Cards
                 </Nav.Link>
               ) : null}
 
-              {userInfo.isAdmin ? (
+              {user.isAdmin ? (
                 <Nav.Link as={NavLink} to="/sandbox">
                   Sandbox
                 </Nav.Link>
@@ -50,7 +54,25 @@ export function Navigation({ userInfo, setUserInfo }: NavbarProps) {
             </>
           )}
         </Nav>
-        <ThemeButton />
+
+        <div className={styles.actions}>
+          {!user ? (
+            <>
+              <Nav.Link as={NavLink} to="/login">
+                Login
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/register">
+                Register
+              </Nav.Link>
+            </>
+          ) : (
+            <>
+              <div>{user.name}</div>
+              <Button onClick={onLogoutClick}>Logout</Button>
+            </>
+          )}
+          <ThemeButton />
+        </div>
       </Navbar.Collapse>
     </Navbar>
   );

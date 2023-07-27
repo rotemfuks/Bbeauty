@@ -9,4 +9,11 @@
     display: flex;
     gap: 1rem;
   }
+
+  .actions {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
 }

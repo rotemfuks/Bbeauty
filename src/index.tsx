@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import { ThemeProvider } from "./context/ThemeContext";
+import { LoginProvider } from "./context/LoginContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider>
-      <App />
+      <LoginProvider>
+        <App />
+      </LoginProvider>
     </ThemeProvider>
   </React.StrictMode>
 );
