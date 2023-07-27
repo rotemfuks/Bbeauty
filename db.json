@@ -6,6 +6,7 @@
       "phone": "0547424641",
       "password": "123456789",
       "isAdmin": true,
+      "isbusiness":false,
       "id": 1
     },
     {
@@ -14,6 +15,7 @@
       "phone": "0522222222",
       "password": "987654321",
       "isAdmin": false,
+      "isbusiness":true,
       "id": 2
     },
     {
@@ -21,6 +23,8 @@
       "email": "bar@emial.ovjhg",
       "password": "685839299499764",
       "phone": "056993929299466",
+      "isAdmin": false,
+      "isbusiness":false,
       "id": 3
     }
   ]
