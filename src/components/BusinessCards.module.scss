@@ -1,3 +1,8 @@
 .cardsContainer {
     padding: 2rem 0;
+
+    .cardActions {
+        display: flex;
+        gap: 1rem;
+    }
 }

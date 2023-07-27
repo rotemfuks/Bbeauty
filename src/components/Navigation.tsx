@@ -46,11 +46,11 @@ export function Navigation() {
                 </Nav.Link>
               ) : null}
 
-              {user.isAdmin ? (
+              {user.isAdmin && (
                 <Nav.Link as={NavLink} to="/sandbox">
                   Sandbox
                 </Nav.Link>
-              ) : null}
+              )}
             </>
           )}
         </Nav>

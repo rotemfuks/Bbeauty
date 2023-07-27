@@ -1,13 +1,30 @@
-import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Button, Card, Col, Row } from "react-bootstrap";
 import styles from "./BusinessCards.module.scss";
 import { Business } from "../interfaces/Business";
+import {
+  BsFillTrashFill,
+  BsFillHeartFill,
+  BsFillPencilFill,
+  BsFillTelephoneFill,
+} from "react-icons/bs";
+import { LoginContext } from "../context/LoginContext";
 
 interface BusinessCardsProps {
   businesses: Business[];
 }
 
 const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
+  const { user } = useContext(LoginContext);
+
+  const onEditClick = () => {};
+
+  const onDeleteClick = () => {};
+
+  const onFavoriteClick = () => {};
+
+  const onPhoneClick = () => {};
+
   return (
     <div className={styles.cardsContainer}>
       <Row className={styles.businessCardsRow}>
@@ -20,6 +37,27 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
                 <Card.Text>Phone: {business.phone}</Card.Text>
                 <Card.Text>Adress: {business.address}</Card.Text>
               </Card.Body>
+
+              <Card.Footer>
+                {user?.isAdmin && (
+                  <>
+                    <Button onClick={onEditClick}>
+                      <BsFillPencilFill />
+                    </Button>
+                    <Button onClick={onDeleteClick}>
+                      <BsFillTrashFill />
+                    </Button>
+                  </>
+                )}
+                {user && (
+                  <Button onClick={onFavoriteClick}>
+                    <BsFillHeartFill />
+                  </Button>
+                )}
+                <Button onClick={onPhoneClick}>
+                  <BsFillTelephoneFill />
+                </Button>
+              </Card.Footer>
             </Card>
           </Col>
         ))}

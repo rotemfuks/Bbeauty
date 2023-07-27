@@ -7,6 +7,7 @@ import { errorMsg, successMsg } from "../services/feedbacksService";
 import { LoginContext } from "../context/LoginContext";
 import User from "../interfaces/User";
 
+import styles from './Login.module.scss';
 
 function Login() {
   const { setUser } = useContext(LoginContext);
@@ -33,8 +34,7 @@ function Login() {
   });
 
   return (
-    <>
-      <div className="container col-md-3">
+    <div className={styles.loginPage}>
         <form onSubmit={formik.handleSubmit}>
           <h3 className="display-3">Login</h3>
 
@@ -82,8 +82,7 @@ function Login() {
           </button>
         </form>
         <Link to="/register">New here? Register Here!</Link>
-      </div>
-    </>
+    </div>
   );
 };
 
