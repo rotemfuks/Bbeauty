@@ -6,3 +6,7 @@ const api: string = `${process.env.REACT_APP_API}/cards`;
 export function addBusinessCard(newBusinessCard: Business) {
   return axios.post(api, newBusinessCard);
 }
+
+export function getCards() {
+  return axios.get(api);
+}
