@@ -13,6 +13,7 @@ import { ThemeContext } from "./context/ThemeContext";
 import Favorites from "./components/Favorites";
 import { About } from "./components/About";
 import Cards from "./components/Cards";
+import { BusinessCardForm } from "./components/BusinessCardForm";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -30,6 +31,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/cards" element={<Cards />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/card-form" element={<BusinessCardForm />} />
             <Route path="*" element={<PageNotFound />}></Route>
           </Routes>
         </div>

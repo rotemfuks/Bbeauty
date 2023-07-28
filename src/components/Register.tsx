@@ -2,9 +2,8 @@ import { useFormik } from "formik";
 import { FunctionComponent, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import { addUser, checkUser } from "../services/userService";
+import { addUser } from "../services/userService";
 import { errorMsg, successMsg } from "../services/feedbacksService";
-import User from "../interfaces/User";
 import { LoginContext } from "../context/LoginContext";
 import { Form } from "react-bootstrap";
 
@@ -42,7 +41,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
 
           setUser(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => errorMsg(err));
     },
   });
 
