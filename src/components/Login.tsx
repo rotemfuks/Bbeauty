@@ -7,7 +7,7 @@ import { errorMsg, successMsg } from "../services/feedbacksService";
 import { LoginContext } from "../context/LoginContext";
 import User from "../interfaces/User";
 
-import styles from './Login.module.scss';
+import styles from "./Login.module.scss";
 
 function Login() {
   const { setUser } = useContext(LoginContext);
@@ -26,7 +26,6 @@ function Login() {
             successMsg(`youre logged in as ${values.email}`);
 
             setUser(res.data[0]);
-
           } else errorMsg("wrong email or password");
         })
         .catch((err) => console.log(err));
@@ -35,55 +34,57 @@ function Login() {
 
   return (
     <div className={styles.loginPage}>
-        <form onSubmit={formik.handleSubmit}>
-          <h3 className="display-3">Login</h3>
+      <form onSubmit={formik.handleSubmit}>
+        <h3 className="display-3">Login</h3>
 
-          <div className="form-floating mb-3">
-            <input
-              type="email"
-              className="form-control"
-              id="floatingInput"
-              placeholder="name@example.com"
-              name="email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
+        <div className="form-floating mb-3">
+          <input
+            type="email"
+            className="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
 
-            <label htmlFor="floatingInput">Email address</label>
-            {formik.touched.email && formik.errors.email && (
-              <small className="text-danger">{formik.errors.email} </small>
-            )}
-          </div>
+          <label htmlFor="floatingInput">Email address</label>
+          {formik.touched.email && formik.errors.email && (
+            <small className="text-danger">{formik.errors.email} </small>
+          )}
+        </div>
 
-          <div className="form-floating">
-            <input
-              type="password"
-              className="form-control"
-              id="floatingPassword"
-              placeholder="Password"
-              name="password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
+        <div className="form-floating">
+          <input
+            type="password"
+            className="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            name="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
 
-            <label htmlFor="floatingPassword">Password</label>
-            {formik.touched.password && formik.errors.password && (
-              <small className="text-danger">{formik.errors.password} </small>
-            )}
-          </div>
-          <button
-            type="submit"
-            className="btn btn-secondary my-3 w-100"
-            disabled={!formik.isValid || !formik.dirty}
-          >
-            Login
-          </button>
-        </form>
-        <Link to="/register">New here? Register Here!</Link>
+          <label htmlFor="floatingPassword">Password</label>
+          {formik.touched.password && formik.errors.password && (
+            <small className="text-danger">{formik.errors.password} </small>
+          )}
+        </div>
+        <button
+          type="submit"
+          className="btn btn-secondary my-3 w-100"
+          disabled={!formik.isValid || !formik.dirty}
+        >
+          Login
+        </button>
+      </form>
+      <Link to="/register">
+        New here?<span className={styles.toRegister}> Register Here! </span>
+      </Link>
     </div>
   );
-};
+}
 
 export default Login;

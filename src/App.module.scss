@@ -1,19 +1,19 @@
 .app {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    .pageContent {
-        max-width: 55rem;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-    }
+  .pageContent {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
 }
 
 .app.dark {
-    background-color: var(--color-black);
-    color: var(--color-white);
+  background-color: var(--color-black);
+  color: var(--color-whiteFont);
 }
 
 .app.light {
-    background-color: var(--color-white);
-    color: var(--color-black);
+  background-color: var(--color-white);
+  color: var(--color-blackFont);
 }

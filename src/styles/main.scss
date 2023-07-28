@@ -1,20 +1,22 @@
 :root {
-    --color-black: #222222;
-    --color-white: #F5F5F5;
+  --color-black: #3a2c32;
+  --color-white: #fee3dc;
+  --color-whiteFont: #fff;
+  --color-blackFont: #000;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
 }
 
 button {
-    color: inherit;
+  color: inherit;
 }

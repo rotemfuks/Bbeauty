@@ -23,7 +23,7 @@ export function Navigation() {
   return (
     <Navbar expanded={isExpended} className={`${styles.navbar}`} expand="lg">
       <Navbar.Brand as={NavLink} to="/home" className={styles.logo}>
-        Bboss
+        Bbeauty
       </Navbar.Brand>
 
       <Navbar.Toggle onClick={toggleIsExpended} />
