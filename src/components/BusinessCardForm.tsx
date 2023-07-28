@@ -9,6 +9,7 @@ import { successMsg } from "../services/feedbacksService";
 interface NewCardFormProps {}
 
 interface NewCardValues {
+  image: string;
   name: string;
   description: string;
   email: string;
@@ -20,6 +21,7 @@ interface NewCardValues {
 
 const BusinessCardForm: React.FC<NewCardFormProps> = () => {
   const initialValues: NewCardValues = {
+    image: "",
     name: "",
     description: "",
     email: "",
@@ -30,6 +32,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
   };
 
   const validationSchema = yup.object({
+    image: yup.string().required().min(2),
     name: yup.string().required().min(4),
     description: yup.string().required().min(10),
     email: yup.string().required().email(),
@@ -44,10 +47,9 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     validationSchema,
     onSubmit(values) {
       console.log(values);
-      addBusinessCard({ ...values })
-      .then(() => {
+      addBusinessCard({ ...values }).then(() => {
         successMsg(`${values.name} was added`);
-      })
+      });
     },
   });
 
@@ -69,6 +71,22 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
               />
               <Form.Control.Feedback type="invalid">
                 {formik.errors.name}
+              </Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group controlId="image">
+              <Form.Label>image url</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter image url"
+                name="image"
+                value={formik.values.image}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                isInvalid={Boolean(formik.touched.image && formik.errors.image)}
+              />
+              <Form.Control.Feedback type="invalid">
+                {formik.errors.image}
               </Form.Control.Feedback>
             </Form.Group>
 

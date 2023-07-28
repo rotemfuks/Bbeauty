@@ -32,13 +32,26 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
           <Col key={index} xs={12} sm={6} md={4}>
             <Card className={styles.businessCard}>
               <Card.Body>
-                <Card.Title>{business.name}</Card.Title>
-                <Card.Text>{business.description}</Card.Text>
-                <Card.Text>Phone: {business.phone}</Card.Text>
-                <Card.Text>Adress: {business.address}</Card.Text>
+                <img
+                  src={business.image}
+                  className={styles.cardImage}
+                  alt={business.name}
+                />
+                <Card.Title className={styles.cardTitle}>
+                  {business.name}
+                </Card.Title>
+                <Card.Text className={styles.cardDescription}>
+                  {business.description}
+                </Card.Text>
+                <Card.Text className={styles.cardPhone}>
+                  Phone: {business.phone}
+                </Card.Text>
+                <Card.Text className={styles.cardAdress}>
+                  Adress: {business.address}
+                </Card.Text>
               </Card.Body>
 
-              <Card.Footer>
+              <Card.Footer className={styles.cardActions}>
                 {user?.isAdmin && (
                   <>
                     <Button onClick={onEditClick}>

@@ -1,8 +1,33 @@
 .cardsContainer {
-    padding: 2rem 0;
+  padding: 2rem 0;
 
-    .cardActions {
-        display: flex;
-        gap: 1rem;
-    }
+  .cardActions {
+    display: flex;
+    gap: 1rem;
+
+    align-items: center;
+  }
+
+  .cardImage {
+    height: 12rem;
+    width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 1.6rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .cardDescription {
+    font-size: 1.1rem;
+  }
+
+  .cardPhone {
+    font-size: 1rem;
+  }
+  .cardAdress {
+    font-size: 1rem;
+  }
 }
