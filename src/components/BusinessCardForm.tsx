@@ -3,12 +3,13 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import styles from "./BusinessCardForm.module.scss";
+import { addBusinessCard } from "../services/cardService";
+import { successMsg } from "../services/feedbacksService";
 
-interface NewCardFormProps {
-}
+interface NewCardFormProps {}
 
 interface NewCardValues {
-  title: string;
+  name: string;
   description: string;
   email: string;
   phone: string;
@@ -19,7 +20,7 @@ interface NewCardValues {
 
 const BusinessCardForm: React.FC<NewCardFormProps> = () => {
   const initialValues: NewCardValues = {
-    title: "",
+    name: "",
     description: "",
     email: "",
     phone: "",
@@ -29,7 +30,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
   };
 
   const validationSchema = yup.object({
-    title: yup.string().required().min(4),
+    name: yup.string().required().min(4),
     description: yup.string().required().min(10),
     email: yup.string().required().email(),
     phone: yup.string().required().min(10),
@@ -43,18 +44,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     validationSchema,
     onSubmit(values) {
       console.log(values);
-    //   addUser({
-    //     ...values,
-    //     isBusiness: Boolean(values.isBusiness),
-    //     isAdmin: false,
-    //   })
-    //     .then((res) => {
-    //       navigate("/home");
-    //       successMsg(`${values.email} wes registered and logged in`);
-
-    //       setUser(res.data);
-    //     })
-    //     .catch((err) => errorMsg(err));
+      addBusinessCard({ ...values })
+      .then(() => {
+        successMsg(`${values.name} was added`);
+      })
     },
   });
 
@@ -63,19 +56,19 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
       <Row className="justify-content-center">
         <Col md={8}>
           <Form onSubmit={formik.handleSubmit} className={styles.cardForm}>
-            <Form.Group controlId="title">
-              <Form.Label>Title</Form.Label>
+            <Form.Group controlId="name">
+              <Form.Label>name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter title"
-                name="title"
-                value={formik.values.title}
+                placeholder="Enter name"
+                name="name"
+                value={formik.values.name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                isInvalid={Boolean(formik.touched.title && formik.errors.title)}
+                isInvalid={Boolean(formik.touched.name && formik.errors.name)}
               />
               <Form.Control.Feedback type="invalid">
-                {formik.errors.title}
+                {formik.errors.name}
               </Form.Control.Feedback>
             </Form.Group>
 

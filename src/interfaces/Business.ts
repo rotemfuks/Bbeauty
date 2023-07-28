@@ -3,4 +3,7 @@ export interface Business {
   description: string;
   phone: string;
   address: string;
+  email: string;
+  state: string;
+  zipCode: string;
 }

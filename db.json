@@ -46,5 +46,17 @@
       "isAdmin": false,
       "id": 5
     }
+  ],
+  "cards": [
+    {
+      "name": "New Place",
+      "description": "gdsgsdgsdgsdgsdgdsgsdgdsgsdg",
+      "email": "gsgsgsdg@gsdgs",
+      "phone": "532523523523",
+      "address": "gsdgsdgsdgsdgsdgsdgsd",
+      "state": "gdsgsdgsdgsdgsd",
+      "zipCode": "213456",
+      "id": 1
+    }
   ]
 }
