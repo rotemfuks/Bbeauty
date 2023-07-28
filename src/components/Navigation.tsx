@@ -68,7 +68,9 @@ export function Navigation() {
           ) : (
             <>
               <div>{user.name}</div>
-              <Button onClick={onLogoutClick}>Logout</Button>
+              <Button onClick={onLogoutClick} className={styles.logoutButton}>
+                Logout
+              </Button>
             </>
           )}
           <ThemeButton />

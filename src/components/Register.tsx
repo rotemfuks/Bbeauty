@@ -118,7 +118,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
             onBlur={formik.handleBlur}
           />
 
-          <label htmlFor="floatingphone">Number Phone</label>
+          <label htmlFor="floatingphone">Phone number</label>
           {formik.touched.phone && formik.errors.phone && (
             <small className="text-danger">{formik.errors.phone} </small>
           )}
@@ -144,7 +144,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
           <Form.Check
             className={styles.checkbox}
             type="checkbox"
-            label="Sign as Business"
+            label="Sign in as Business"
             value={formik.values.isBusiness}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -160,7 +160,8 @@ const Register: FunctionComponent<RegisterProps> = () => {
         </button>
       </form>
       <Link to="/">
-        Already have an account? <span className={styles.toLogIn}> Login here! </span>
+        Already have an account?{" "}
+        <span className={styles.toLogIn}> Login here! </span>
       </Link>
     </div>
   );
