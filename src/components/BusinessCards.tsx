@@ -10,6 +10,7 @@ import {
 } from "react-icons/bs";
 import { LoginContext } from "../context/LoginContext";
 import { deleteCard } from "../services/cardService";
+import { useNavigate } from "react-router-dom";
 
 interface BusinessCardsProps {
   businesses: Business[];
@@ -17,6 +18,7 @@ interface BusinessCardsProps {
 
 const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
   // const { user } = useContext(LoginContext);
+  const navigate = useNavigate();
 
   const user = {
     name: "rotem fuks",
@@ -28,14 +30,21 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
     id: 1,
   };
 
-  const onEditClick = () => {};
+  const onEditClick = (cardId: number) => {
+    const queryParams = new URLSearchParams();
+    queryParams.append("cardId", String(cardId));
+
+    navigate({
+      pathname: "/card-form",
+      search: queryParams.toString(),
+    });
+  };
 
   const onDeleteClick = (cardId: number) => {
     deleteCard(cardId);
   };
 
   const onFavoriteClick = () => {};
-  
 
   return (
     <div className={styles.cardsContainer}>
@@ -68,7 +77,7 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
               <Card.Footer className={styles.cardActions}>
                 {user?.isAdmin && (
                   <>
-                    <Button onClick={onEditClick}>
+                    <Button onClick={() => business.id && onEditClick(business.id)}>
                       <BsFillPencilFill />
                     </Button>
                     <Button

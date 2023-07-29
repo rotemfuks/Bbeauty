@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import styles from "./BusinessCardForm.module.scss";
-import { addBusinessCard } from "../services/cardService";
+import { addBusinessCard, getCardDetails } from "../services/cardService";
 import { successMsg } from "../services/feedbacksService";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +22,7 @@ interface NewCardValues {
 
 const BusinessCardForm: React.FC<NewCardFormProps> = () => {
   const navigate = useNavigate();
-  
+
   const initialValues: NewCardValues = {
     image: "",
     name: "",
@@ -55,6 +55,18 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
       navigate("/home");
     },
   });
+
+    useEffect(() => {
+      const url = new URL(window.location.href);
+      const queryParams = new URLSearchParams(url.search);
+      const cardId = queryParams.get("cardId");
+
+      if (cardId) {
+        getCardDetails(Number(cardId)).then((res) => {
+          formik.setValues(res.data);
+        });
+      }
+    }, []);
 
   return (
     <Container>
