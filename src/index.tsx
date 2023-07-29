@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LoginProvider } from "./context/LoginContext";
+import { FavoriteProvider } from "./context/FavoritesContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +15,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider>
       <LoginProvider>
-        <App />
+        <FavoriteProvider>
+          <App />
+        </FavoriteProvider>
       </LoginProvider>
     </ThemeProvider>
   </React.StrictMode>
