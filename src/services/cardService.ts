@@ -18,3 +18,7 @@ export function deleteCard(cardId: number) {
 export function getCardDetails(cardId: number) {
   return axios.get(`${api}/${cardId}`);
 }
+
+export function editCard(cardId: number, cardDetails: Business) {
+  return axios.put(`${api}/${cardId}`, cardDetails);
+}

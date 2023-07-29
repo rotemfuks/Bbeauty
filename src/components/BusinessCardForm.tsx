@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import styles from "./BusinessCardForm.module.scss";
-import { addBusinessCard, getCardDetails } from "../services/cardService";
+import { addBusinessCard, editCard, getCardDetails } from "../services/cardService";
 import { successMsg } from "../services/feedbacksService";
 import { useNavigate } from "react-router-dom";
 
@@ -21,6 +21,8 @@ interface NewCardValues {
 }
 
 const BusinessCardForm: React.FC<NewCardFormProps> = () => {
+  const [cardId, setCardId] = useState<number | null>(null);
+
   const navigate = useNavigate();
 
   const initialValues: NewCardValues = {
@@ -49,24 +51,30 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     initialValues,
     validationSchema,
     onSubmit(values) {
-      addBusinessCard({ ...values }).then(() => {
-        successMsg(`${values.name} was added`);
-      });
+      if (cardId) {
+        editCard(cardId, values);
+      } else {
+        addBusinessCard({ ...values }).then(() => {
+          successMsg(`${values.name} was added`);
+        });
+      }
+
       navigate("/home");
     },
   });
 
-    useEffect(() => {
-      const url = new URL(window.location.href);
-      const queryParams = new URLSearchParams(url.search);
-      const cardId = queryParams.get("cardId");
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const queryParams = new URLSearchParams(url.search);
+    const cardIdParam = queryParams.get("cardId");
 
-      if (cardId) {
-        getCardDetails(Number(cardId)).then((res) => {
-          formik.setValues(res.data);
-        });
-      }
-    }, []);
+    if (cardIdParam) {
+      setCardId(Number(cardIdParam));
+      getCardDetails(Number(cardIdParam)).then((res) => {
+        formik.setValues(res.data);
+      });
+    }
+  }, []);
 
   return (
     <Container>
