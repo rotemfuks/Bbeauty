@@ -1,20 +1,13 @@
-import { FunctionComponent, useContext, useEffect, useState } from "react";
-import { Card } from "../interfaces/Card";
+import { FunctionComponent, useContext } from "react";
 import BusinessCards from "./BusinessCards";
 import { FavoriteContext } from "../context/FavoritesContext";
-import { getCards } from "../services/cardService";
+import { CardContext } from "../context/CardContext";
 
 interface FavoritesProps {}
 
 const Favorites: FunctionComponent<FavoritesProps> = () => {
-  const [cards, setCards] = useState<Card[]>([]);
   const { favoriteCardIds } = useContext(FavoriteContext);
-
-  useEffect(() => {
-    getCards().then((res) => {
-      setCards(res.data);
-    });
-  }, []);
+  const { cards } = useContext(CardContext);
 
   return (
     <>

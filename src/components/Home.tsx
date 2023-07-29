@@ -1,23 +1,16 @@
-import { FunctionComponent, useContext, useEffect, useState } from "react";
+import { FunctionComponent, useContext, useEffect } from "react";
 import BusinessCards from "./BusinessCards";
-import { Card } from "../interfaces/Card";
-import { getCards } from "../services/cardService";
 import { Button } from "react-bootstrap";
 import { BsBuildingAdd } from "react-icons/bs";
 import { LoginContext } from "../context/LoginContext";
 import { useNavigate } from "react-router-dom";
+import { CardContext } from "../context/CardContext";
 interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {
-  const [cards, setCards] = useState<Card[]>([]);
   const { user } = useContext(LoginContext);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    getCards().then((res) => {
-      setCards(res.data);
-    });
-  }, []);
+  const { cards } = useContext(CardContext);
 
   const onClickAddCard = () => {
     navigate("/card-form");

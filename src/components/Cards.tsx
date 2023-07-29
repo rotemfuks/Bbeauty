@@ -1,20 +1,13 @@
-import { FunctionComponent, useContext, useEffect, useState } from "react";
-import { Card } from "../interfaces/Card";
+import { FunctionComponent, useContext } from "react";
 import BusinessCards from "./BusinessCards";
-import { getCards } from "../services/cardService";
 import { LoginContext } from "../context/LoginContext";
+import { CardContext } from "../context/CardContext";
 
 interface CardsProps {}
 
 const MyCards: FunctionComponent<CardsProps> = () => {
-  const [cards, setCards] = useState<Card[]>([]);
   const { user } = useContext(LoginContext);
-
-  useEffect(() => {
-    getCards().then((res) => {
-      setCards(res.data);
-    });
-  }, []);
+  const { cards } = useContext(CardContext);
 
   return (
     <>

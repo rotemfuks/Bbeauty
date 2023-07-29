@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { Navigation } from "./components/Navigation";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import "./styles/main.scss";
 import styles from "./App.module.scss";
@@ -14,9 +14,15 @@ import Favorites from "./components/Favorites";
 import { About } from "./components/About";
 import MyCards from "./components/Cards";
 import { BusinessCardForm } from "./components/BusinessCardForm";
+import { CardContext } from "./context/CardContext";
 
 function App() {
   const { theme } = useContext(ThemeContext);
+  const { loadCards } = useContext(CardContext);
+
+  useEffect(() => {
+    loadCards();
+  }, [loadCards]);
 
   return (
     <div className={`${styles.app} ${styles[theme]}`} data-bs-theme={theme}>

@@ -7,6 +7,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LoginProvider } from "./context/LoginContext";
 import { FavoriteProvider } from "./context/FavoritesContext";
+import { CardProvider } from "./context/CardContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,9 +16,11 @@ root.render(
   <React.StrictMode>
     <ThemeProvider>
       <LoginProvider>
-        <FavoriteProvider>
-          <App />
-        </FavoriteProvider>
+        <CardProvider>
+          <FavoriteProvider>
+            <App />
+          </FavoriteProvider>
+        </CardProvider>
       </LoginProvider>
     </ThemeProvider>
   </React.StrictMode>
