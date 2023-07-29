@@ -1,18 +1,27 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useContext, useEffect, useState } from "react";
 import BusinessCards from "./BusinessCards";
 import { Business } from "../interfaces/Business";
 import { getCards } from "../services/cardService";
-
+import { Button } from "react-bootstrap";
+import { BsBuildingAdd } from "react-icons/bs";
+import { LoginContext } from "../context/LoginContext";
+import { useNavigate } from "react-router-dom";
 interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {
   const [businesses, setBusinesses] = useState<Business[]>([]);
+  const { user } = useContext(LoginContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCards().then((res) => {
-      setBusinesses(res.data)
+      setBusinesses(res.data);
     });
   }, []);
+
+  const onClickAddCard = () => {
+    navigate("/card-form");
+  }
 
   return (
     <>
@@ -25,12 +34,14 @@ const Home: FunctionComponent<HomeProps> = () => {
         business cards that exude elegance and professionalism.
       </div>
       <BusinessCards businesses={businesses} />
+
+      {!user?.isBusiness && (
+        <Button onClick={onClickAddCard}>
+          <BsBuildingAdd /> Add card
+        </Button>
+      )}
     </>
   );
 };
 
 export default Home;
-function setState<T>(): [any, any] {
-  throw new Error("Function not implemented.");
-}
-

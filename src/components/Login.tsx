@@ -24,7 +24,6 @@ function Login() {
           if (res.data.length) {
             navigate("/home");
             successMsg(`youre logged in as ${values.email}`);
-
             setUser(res.data[0]);
           } else errorMsg("wrong email or password");
         })

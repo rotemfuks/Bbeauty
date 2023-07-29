@@ -45,6 +45,16 @@
       "isBusiness": true,
       "isAdmin": false,
       "id": 5
+    },
+    {
+      "name": "shalom",
+      "email": "shalom@gmail",
+      "password": "12121212",
+      "phone": "43678765432",
+      "address": "הקישון 7, 9",
+      "isBusiness": true,
+      "isAdmin": false,
+      "id": 6
     }
   ],
   "cards": [
@@ -68,6 +78,28 @@
       "state": "israel",
       "zipCode": "543w45",
       "id": 2
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Harry_Potter_wordmark.svg",
+      "name": "Rotem Fuks",
+      "description": "ergergferfgregerfg",
+      "email": "bar74064@gmail.com",
+      "phone": "0547424641",
+      "address": "HAKISHON 7 ST",
+      "state": "tlmrglfd",
+      "zipCode": "7524507",
+      "id": 3
+    },
+    {
+      "image": "kmflkdemfk",
+      "name": "krmegkedrm",
+      "description": "kfmkdgvrdfgkvnd",
+      "email": "kmedfcksdef@fvef",
+      "phone": "ksmncsdkv65",
+      "address": "kdnfdsm",
+      "state": "dkfncdsfn",
+      "zipCode": "fdnvldfv",
+      "id": 4
     }
   ]
 }

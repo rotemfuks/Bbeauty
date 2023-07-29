@@ -8,9 +8,13 @@
     align-items: center;
   }
 
-  .cardImage {
+  .imageContainer {
     height: 12rem;
-    width: 100%;
+    overflow: hidden;
+    
+    .cardImage {
+      width: 100%;
+    }
   }
 
   .cardTitle {

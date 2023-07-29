@@ -32,11 +32,13 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
           <Col key={index} xs={12} sm={6} md={4}>
             <Card className={styles.businessCard}>
               <Card.Body>
-                <img
-                  src={business.image}
-                  className={styles.cardImage}
-                  alt={business.name}
-                />
+                <div className={styles.imageContainer}>
+                  <img
+                    src={business.image}
+                    className={styles.cardImage}
+                    alt={business.name}
+                  />
+                </div>
                 <Card.Title className={styles.cardTitle}>
                   {business.name}
                 </Card.Title>

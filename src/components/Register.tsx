@@ -40,7 +40,6 @@ const Register: FunctionComponent<RegisterProps> = () => {
         .then((res) => {
           navigate("/home");
           successMsg(`${values.email} wes registered and logged in`);
-
           setUser(res.data);
         })
         .catch((err) => errorMsg(err));
@@ -159,7 +158,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
           Register
         </button>
       </form>
-      <Link to="/">
+      <Link to="/login">
         Already have an account?{" "}
         <span className={styles.toLogIn}> Login here! </span>
       </Link>

@@ -5,6 +5,7 @@ import * as yup from "yup";
 import styles from "./BusinessCardForm.module.scss";
 import { addBusinessCard } from "../services/cardService";
 import { successMsg } from "../services/feedbacksService";
+import { useNavigate } from "react-router-dom";
 
 interface NewCardFormProps {}
 
@@ -59,7 +60,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
         <Col md={8}>
           <Form onSubmit={formik.handleSubmit} className={styles.cardForm}>
             <Form.Group controlId="name">
-              <Form.Label>name</Form.Label>
+              <Form.Label>Business name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter name"
@@ -189,7 +190,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+            >
               Submit
             </Button>
           </Form>
