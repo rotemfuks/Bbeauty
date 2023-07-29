@@ -21,6 +21,8 @@ interface NewCardValues {
 }
 
 const BusinessCardForm: React.FC<NewCardFormProps> = () => {
+  const navigate = useNavigate();
+  
   const initialValues: NewCardValues = {
     image: "",
     name: "",
@@ -47,10 +49,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     initialValues,
     validationSchema,
     onSubmit(values) {
-      console.log(values);
       addBusinessCard({ ...values }).then(() => {
         successMsg(`${values.name} was added`);
       });
+      navigate("/home");
     },
   });
 
@@ -190,10 +192,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Button
-              variant="primary"
-              type="submit"
-            >
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>

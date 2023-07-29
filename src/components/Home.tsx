@@ -35,7 +35,7 @@ const Home: FunctionComponent<HomeProps> = () => {
       </div>
       <BusinessCards businesses={businesses} />
 
-      {!user?.isBusiness && (
+      {user?.isBusiness && (
         <Button onClick={onClickAddCard}>
           <BsBuildingAdd /> Add card
         </Button>
