@@ -9,13 +9,13 @@ import { useNavigate } from "react-router-dom";
 interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {
-  const [businesses, setBusinesses] = useState<Card[]>([]);
+  const [cards, setCards] = useState<Card[]>([]);
   const { user } = useContext(LoginContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     getCards().then((res) => {
-      setBusinesses(res.data);
+      setCards(res.data);
     });
   }, []);
 
@@ -33,7 +33,7 @@ const Home: FunctionComponent<HomeProps> = () => {
         owner, or skincare specialist, our collection offers a diverse range of
         business cards that exude elegance and professionalism.
       </div>
-      <BusinessCards cards={businesses} />
+      <BusinessCards cards={cards} />
 
       {user?.isBusiness && (
         <Button onClick={onClickAddCard}>

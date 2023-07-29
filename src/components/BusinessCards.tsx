@@ -18,19 +18,9 @@ interface BusinessCardsProps {
 }
 
 const BusinessCards: React.FC<BusinessCardsProps> = ({ cards }) => {
-  // const { user } = useContext(LoginContext);
+  const { user } = useContext(LoginContext);
   const navigate = useNavigate();
   const { addToFavorite, removeFromFavorite, favoriteCardIds } = useContext(FavoriteContext);
-
-  const user = {
-    name: "rotem fuks",
-    email: "bar74064@gmail.com",
-    phone: "0547424641",
-    password: "123456789",
-    isAdmin: true,
-    isbusiness: true,
-    id: 1,
-  };
 
   const onEditClick = (cardId: number) => {
     const queryParams = new URLSearchParams();
