@@ -10,7 +10,7 @@ import {
 } from "react-icons/bs";
 import { LoginContext } from "../context/LoginContext";
 import { deleteCard } from "../services/cardService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FavoriteContext } from "../context/FavoritesContext";
 
 interface BusinessCardsProps {
@@ -20,7 +20,8 @@ interface BusinessCardsProps {
 const BusinessCards: React.FC<BusinessCardsProps> = ({ cards }) => {
   const { user } = useContext(LoginContext);
   const navigate = useNavigate();
-  const { addToFavorite, removeFromFavorite, favoriteCardIds } = useContext(FavoriteContext);
+  const { addToFavorite, removeFromFavorite, favoriteCardIds } =
+    useContext(FavoriteContext);
 
   const onEditClick = (cardId: number) => {
     const queryParams = new URLSearchParams();
@@ -39,7 +40,7 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ cards }) => {
   const onFavoriteClick = (cardId: number) => {
     const isFavorite = favoriteCardIds.includes(cardId);
     if (isFavorite) {
-      removeFromFavorite(cardId)
+      removeFromFavorite(cardId);
     } else {
       addToFavorite(cardId);
     }
@@ -60,7 +61,7 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ cards }) => {
                   />
                 </div>
                 <CardBs.Title className={styles.cardTitle}>
-                  {card.name}
+                  <Link to={`/business?cardId=${card.id}`}>{card.name}</Link>
                 </CardBs.Title>
                 <CardBs.Text className={styles.cardDescription}>
                   {card.description}
