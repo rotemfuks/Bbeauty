@@ -10,3 +10,7 @@ export function addBusinessCard(newBusinessCard: Business) {
 export function getCards() {
   return axios.get(api);
 }
+
+export function deleteCard(cardId: number) {
+  axios.delete(`${api}/${cardId}`);
+}

@@ -9,17 +9,30 @@ import {
   BsFillTelephoneFill,
 } from "react-icons/bs";
 import { LoginContext } from "../context/LoginContext";
+import { deleteCard } from "../services/cardService";
 
 interface BusinessCardsProps {
   businesses: Business[];
 }
 
 const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
-  const { user } = useContext(LoginContext);
+  // const { user } = useContext(LoginContext);
+
+  const user = {
+    name: "rotem fuks",
+    email: "bar74064@gmail.com",
+    phone: "0547424641",
+    password: "123456789",
+    isAdmin: true,
+    isbusiness: true,
+    id: 1,
+  };
 
   const onEditClick = () => {};
 
-  const onDeleteClick = () => {};
+  const onDeleteClick = (cardId: number) => {
+    deleteCard(cardId);
+  };
 
   const onFavoriteClick = () => {};
 
@@ -59,7 +72,9 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
                     <Button onClick={onEditClick}>
                       <BsFillPencilFill />
                     </Button>
-                    <Button onClick={onDeleteClick}>
+                    <Button
+                      onClick={() => business.id && onDeleteClick(business.id)}
+                    >
                       <BsFillTrashFill />
                     </Button>
                   </>

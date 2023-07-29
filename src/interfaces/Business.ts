@@ -7,4 +7,5 @@ export interface Business {
   email: string;
   state: string;
   zipCode: string;
+  id?: number;
 }
