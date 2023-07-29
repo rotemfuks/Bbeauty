@@ -8,4 +8,5 @@ export interface Card {
   state: string;
   zipCode: string;
   id?: number;
+  userId?: number;
 }

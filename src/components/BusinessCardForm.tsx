@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -6,6 +6,7 @@ import styles from "./BusinessCardForm.module.scss";
 import { addCard, editCard, getCardDetails } from "../services/cardService";
 import { successMsg } from "../services/feedbacksService";
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../context/LoginContext";
 
 interface NewCardFormProps {}
 
@@ -22,6 +23,7 @@ interface NewCardValues {
 
 const BusinessCardForm: React.FC<NewCardFormProps> = () => {
   const [cardId, setCardId] = useState<number | null>(null);
+  const { user } = useContext(LoginContext);
 
   const navigate = useNavigate();
 
@@ -53,8 +55,11 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     onSubmit(values) {
       if (cardId) {
         editCard(cardId, values);
-      } else {
-        addCard({ ...values }).then(() => {
+      } else if (user) {
+        addCard({
+          ...values,
+          userId: user.id,
+        }).then(() => {
           successMsg(`${values.name} was added`);
         });
       }

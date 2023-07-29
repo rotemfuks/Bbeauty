@@ -12,7 +12,7 @@ import styles from "./App.module.scss";
 import { ThemeContext } from "./context/ThemeContext";
 import Favorites from "./components/Favorites";
 import { About } from "./components/About";
-import Cards from "./components/Cards";
+import MyCards from "./components/Cards";
 import { BusinessCardForm } from "./components/BusinessCardForm";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/cards" element={<Cards />} />
+            <Route path="/my-cards" element={<MyCards />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/card-form" element={<BusinessCardForm />} />
             <Route path="*" element={<PageNotFound />}></Route>

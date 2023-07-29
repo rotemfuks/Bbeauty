@@ -41,7 +41,7 @@ export function Navigation() {
               </Nav.Link>
 
               {user.isBusiness || user.isAdmin ? (
-                <Nav.Link as={NavLink} to="/cards">
+                <Nav.Link as={NavLink} to="/my-cards">
                   My Cards
                 </Nav.Link>
               ) : null}
