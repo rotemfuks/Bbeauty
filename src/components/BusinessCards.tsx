@@ -35,8 +35,7 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
   };
 
   const onFavoriteClick = () => {};
-
-  const onPhoneClick = () => {};
+  
 
   return (
     <div className={styles.cardsContainer}>
@@ -84,8 +83,10 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
                     <BsFillHeartFill />
                   </Button>
                 )}
-                <Button onClick={onPhoneClick}>
-                  <BsFillTelephoneFill />
+                <Button>
+                  <a href={`tel:${business.phone}`}>
+                    <BsFillTelephoneFill />
+                  </a>
                 </Button>
               </Card.Footer>
             </Card>
