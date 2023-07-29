@@ -1,4 +1,4 @@
-export interface Business {
+export interface Card {
   name: string;
   image: string;
   description: string;

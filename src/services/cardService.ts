@@ -1,9 +1,9 @@
 import axios from "axios";
-import { Business } from "../interfaces/Business";
+import { Card } from "../interfaces/Card";
 
 const api: string = `${process.env.REACT_APP_API}/cards`;
 
-export function addBusinessCard(newBusinessCard: Business) {
+export function addCard(newBusinessCard: Card) {
   return axios.post(api, newBusinessCard);
 }
 
@@ -19,6 +19,6 @@ export function getCardDetails(cardId: number) {
   return axios.get(`${api}/${cardId}`);
 }
 
-export function editCard(cardId: number, cardDetails: Business) {
+export function editCard(cardId: number, cardDetails: Card) {
   return axios.put(`${api}/${cardId}`, cardDetails);
 }

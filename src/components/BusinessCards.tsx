@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button, Card as CardBs, Col, Row } from "react-bootstrap";
 import styles from "./BusinessCards.module.scss";
-import { Business } from "../interfaces/Business";
+import { Card } from "../interfaces/Card";
 import {
   BsFillTrashFill,
   BsFillHeartFill,
@@ -13,10 +13,10 @@ import { deleteCard } from "../services/cardService";
 import { useNavigate } from "react-router-dom";
 
 interface BusinessCardsProps {
-  businesses: Business[];
+  cards: Card[];
 }
 
-const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
+const BusinessCards: React.FC<BusinessCardsProps> = ({ cards }) => {
   // const { user } = useContext(LoginContext);
   const navigate = useNavigate();
 
@@ -49,10 +49,10 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
   return (
     <div className={styles.cardsContainer}>
       <Row className={styles.businessCardsRow}>
-        {businesses.map((business, index) => (
+        {cards.map((business, index) => (
           <Col key={index} xs={12} sm={6} md={4}>
-            <Card className={styles.businessCard}>
-              <Card.Body>
+            <CardBs className={styles.businessCard}>
+              <CardBs.Body>
                 <div className={styles.imageContainer}>
                   <img
                     src={business.image}
@@ -60,24 +60,26 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
                     alt={business.name}
                   />
                 </div>
-                <Card.Title className={styles.cardTitle}>
+                <CardBs.Title className={styles.cardTitle}>
                   {business.name}
-                </Card.Title>
-                <Card.Text className={styles.cardDescription}>
+                </CardBs.Title>
+                <CardBs.Text className={styles.cardDescription}>
                   {business.description}
-                </Card.Text>
-                <Card.Text className={styles.cardPhone}>
+                </CardBs.Text>
+                <CardBs.Text className={styles.cardPhone}>
                   Phone: {business.phone}
-                </Card.Text>
-                <Card.Text className={styles.cardAdress}>
+                </CardBs.Text>
+                <CardBs.Text className={styles.cardAdress}>
                   Adress: {business.address}
-                </Card.Text>
-              </Card.Body>
+                </CardBs.Text>
+              </CardBs.Body>
 
-              <Card.Footer className={styles.cardActions}>
+              <CardBs.Footer className={styles.cardActions}>
                 {user?.isAdmin && (
                   <>
-                    <Button onClick={() => business.id && onEditClick(business.id)}>
+                    <Button
+                      onClick={() => business.id && onEditClick(business.id)}
+                    >
                       <BsFillPencilFill />
                     </Button>
                     <Button
@@ -97,8 +99,8 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ businesses }) => {
                     <BsFillTelephoneFill />
                   </a>
                 </Button>
-              </Card.Footer>
-            </Card>
+              </CardBs.Footer>
+            </CardBs>
           </Col>
         ))}
       </Row>

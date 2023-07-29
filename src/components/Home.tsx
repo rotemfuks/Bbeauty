@@ -1,6 +1,6 @@
 import { FunctionComponent, useContext, useEffect, useState } from "react";
 import BusinessCards from "./BusinessCards";
-import { Business } from "../interfaces/Business";
+import { Card } from "../interfaces/Card";
 import { getCards } from "../services/cardService";
 import { Button } from "react-bootstrap";
 import { BsBuildingAdd } from "react-icons/bs";
@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {
-  const [businesses, setBusinesses] = useState<Business[]>([]);
+  const [businesses, setBusinesses] = useState<Card[]>([]);
   const { user } = useContext(LoginContext);
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const Home: FunctionComponent<HomeProps> = () => {
 
   const onClickAddCard = () => {
     navigate("/card-form");
-  }
+  };
 
   return (
     <>
@@ -33,7 +33,7 @@ const Home: FunctionComponent<HomeProps> = () => {
         owner, or skincare specialist, our collection offers a diverse range of
         business cards that exude elegance and professionalism.
       </div>
-      <BusinessCards businesses={businesses} />
+      <BusinessCards cards={businesses} />
 
       {user?.isBusiness && (
         <Button onClick={onClickAddCard}>

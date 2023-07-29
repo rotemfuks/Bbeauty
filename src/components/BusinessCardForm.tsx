@@ -3,7 +3,7 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import styles from "./BusinessCardForm.module.scss";
-import { addBusinessCard, editCard, getCardDetails } from "../services/cardService";
+import { addCard, editCard, getCardDetails } from "../services/cardService";
 import { successMsg } from "../services/feedbacksService";
 import { useNavigate } from "react-router-dom";
 
@@ -54,7 +54,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
       if (cardId) {
         editCard(cardId, values);
       } else {
-        addBusinessCard({ ...values }).then(() => {
+        addCard({ ...values }).then(() => {
           successMsg(`${values.name} was added`);
         });
       }
