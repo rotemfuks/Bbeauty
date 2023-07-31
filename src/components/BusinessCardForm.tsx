@@ -43,10 +43,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     name: yup.string().required().min(4),
     description: yup.string().required().min(10),
     email: yup.string().required().email(),
-    phone: yup.string().required().min(10),
+    phone: yup.number().required().min(10),
     address: yup.string().required().min(7),
     state: yup.string().required(),
-    zipCode: yup.string().required(),
+    zipCode: yup.number().required(),
   });
 
   const formik = useFormik({
