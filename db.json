@@ -60,6 +60,7 @@
   "cards": [
     {
       "image": "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+      "alt": "nails",
       "name": "nails by michal",
       "description": "nice and calm nail clinic. we offer good prices and great work. we have 3 workers ",
       "email": "michal@gmail.com",
@@ -72,6 +73,7 @@
     },
     {
       "image": "https://plus.unsplash.com/premium_photo-1682965699742-92e41c2d8630?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "alt": "pepole face",
       "name": "Facial Treatment",
       "description": "we offer our clients facial treatment with the best doctors out there.",
       "email": "facialHolon@gmail.com",
@@ -84,6 +86,7 @@
     },
     {
       "image": "https://plus.unsplash.com/premium_photo-1677087454529-ba70fefe7d57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=784&q=80",
+      "alt": "make up pallete",
       "name": "Make Up by sasha",
       "description": "professional make up artist. with 4 years experience in make up for events and brides. ",
       "email": "makeupSasha@gmail.com",

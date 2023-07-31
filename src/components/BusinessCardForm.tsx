@@ -12,6 +12,7 @@ interface NewCardFormProps {}
 
 interface NewCardValues {
   image: string;
+  alt: string;
   name: string;
   description: string;
   email: string;
@@ -29,6 +30,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
 
   const initialValues: NewCardValues = {
     image: "",
+    alt: "",
     name: "",
     description: "",
     email: "",
@@ -40,6 +42,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
 
   const validationSchema = yup.object({
     image: yup.string().required().min(2),
+    alt: yup.string().required().min(3),
     name: yup.string().required().min(4),
     description: yup.string().required().min(10),
     email: yup.string().required().email(),
@@ -112,6 +115,22 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 isInvalid={Boolean(formik.touched.image && formik.errors.image)}
+              />
+              <Form.Control.Feedback type="invalid">
+                {formik.errors.image}
+              </Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group controlId="alt">
+              <Form.Label>image alt</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter image alt"
+                name="alt"
+                value={formik.values.alt}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                isInvalid={Boolean(formik.touched.alt && formik.errors.alt)}
               />
               <Form.Control.Feedback type="invalid">
                 {formik.errors.image}
