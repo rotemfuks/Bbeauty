@@ -40,11 +40,11 @@ export function Navigation() {
                 Favorites
               </Nav.Link>
 
-              {user.isBusiness || user.isAdmin ? (
+              {user.isBusiness && (
                 <Nav.Link as={NavLink} to="/my-cards">
                   My Cards
                 </Nav.Link>
-              ) : null}
+              )}
 
               {user.isAdmin && (
                 <Nav.Link as={NavLink} to="/sandbox">

@@ -67,6 +67,7 @@
       "address": "Tel Aviv",
       "state": "israel",
       "zipCode": "58584839",
+      "userId": 1,
       "id": 2
     },
     {
@@ -78,6 +79,7 @@
       "address": "Hakishon st.4 Holon",
       "state": "Israel",
       "zipCode": "7524507",
+      "userId": 2,
       "id": 3
     },
     {
@@ -89,7 +91,7 @@
       "address": "Rishon Lezion",
       "state": "israel",
       "zipCode": "685944",
-      "userId": 2,
+      "userId": 3,
       "id": 4
     }
   ]

@@ -16,6 +16,7 @@ import MyCards from "./components/Cards";
 import { BusinessCardForm } from "./components/BusinessCardForm";
 import { CardContext } from "./context/CardContext";
 import { BusinessPage } from "./components/Business";
+import Footer from "./components/Footer";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -42,6 +43,7 @@ function App() {
             <Route path="/business" element={<BusinessPage />} />
             <Route path="*" element={<PageNotFound />}></Route>
           </Routes>
+          <Footer/>
         </div>
       </Router>
     </div>
