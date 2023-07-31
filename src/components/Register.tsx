@@ -26,7 +26,13 @@ const Register: FunctionComponent<RegisterProps> = () => {
     validationSchema: yup.object({
       name: yup.string().required().min(4),
       email: yup.string().required().email(),
-      password: yup.string().required().min(8),
+      password: yup
+        .string()
+        .required()
+        .matches(
+          /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[\]:;<>,.?/~_+\-=|\\]).{8,32}$/,
+          "Password must contain at least one digit, one lowercase letter, one uppercase letter, and one special character from [*.!@$%^&(){}[]:;<>,.?/~_+-=|\\] and be between 8 and 32 characters long"
+        ),
       phone: yup.number().required().min(10),
       address: yup.string().required().min(7),
     }),
@@ -63,7 +69,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
             onBlur={formik.handleBlur}
           />
 
-          <label htmlFor="floatingname">Full Name</label>
+          <label htmlFor="floatingname">Full Name:</label>
           {formik.touched.name && formik.errors.name && (
             <small className="text-danger">{formik.errors.name} </small>
           )}
@@ -81,7 +87,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
             onBlur={formik.handleBlur}
           />
 
-          <label htmlFor="floatingInput">Email address</label>
+          <label htmlFor="floatingInput">Email address:</label>
           {formik.touched.email && formik.errors.email && (
             <small className="text-danger">{formik.errors.email} </small>
           )}
@@ -99,7 +105,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
             onBlur={formik.handleBlur}
           />
 
-          <label htmlFor="floatingPassword">Password</label>
+          <label htmlFor="floatingPassword">Password:</label>
           {formik.touched.password && formik.errors.password && (
             <small className="text-danger">{formik.errors.password} </small>
           )}
@@ -117,7 +123,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
             onBlur={formik.handleBlur}
           />
 
-          <label htmlFor="floatingphone">Phone number</label>
+          <label htmlFor="floatingphone">Phone number:</label>
           {formik.touched.phone && formik.errors.phone && (
             <small className="text-danger">{formik.errors.phone} </small>
           )}
@@ -135,7 +141,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
             onBlur={formik.handleBlur}
           />
 
-          <label htmlFor="floatingaddress">Address</label>
+          <label htmlFor="floatingaddress">Address:</label>
           {formik.touched.address && formik.errors.address && (
             <small className="text-danger">{formik.errors.address} </small>
           )}

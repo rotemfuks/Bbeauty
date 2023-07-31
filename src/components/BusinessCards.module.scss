@@ -4,14 +4,14 @@
   .cardActions {
     display: flex;
     gap: 1rem;
-
+    background: rgb(220, 171, 188);
     align-items: center;
   }
 
   .imageContainer {
     height: 12rem;
     overflow: hidden;
-    
+
     .cardImage {
       width: 100%;
     }
@@ -34,4 +34,14 @@
   .cardAdress {
     font-size: 1rem;
   }
+}
+.cardCrud {
+  background-color: rgb(237, 237, 237);
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+}
+
+.cardCrud:hover {
+  background-color: black;
+  color: rgb(237, 237, 237);
 }

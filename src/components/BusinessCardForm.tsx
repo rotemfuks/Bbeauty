@@ -90,10 +90,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
         <Col md={8}>
           <Form onSubmit={formik.handleSubmit} className={styles.cardForm}>
             <Form.Group controlId="name">
-              <Form.Label>Business name</Form.Label>
+              <Form.Label>Business name:</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter name"
+                placeholder="Enter business name"
                 name="name"
                 value={formik.values.name}
                 onChange={formik.handleChange}
@@ -106,7 +106,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
             </Form.Group>
 
             <Form.Group controlId="image">
-              <Form.Label>image url</Form.Label>
+              <Form.Label>Image url:</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter image url"
@@ -122,7 +122,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
             </Form.Group>
 
             <Form.Group controlId="alt">
-              <Form.Label>image alt</Form.Label>
+              <Form.Label>Image alt:</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter image alt"
@@ -138,11 +138,11 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
             </Form.Group>
 
             <Form.Group controlId="description">
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Business description:</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={4}
-                placeholder="Enter description"
+                placeholder="Enter business description"
                 name="description"
                 value={formik.values.description}
                 onChange={formik.handleChange}
@@ -157,10 +157,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
             </Form.Group>
 
             <Form.Group controlId="email">
-              <Form.Label>Email</Form.Label>
+              <Form.Label>Email address:</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Enter email"
+                placeholder="Enter email address"
                 name="email"
                 value={formik.values.email}
                 onChange={formik.handleChange}
@@ -173,10 +173,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
             </Form.Group>
 
             <Form.Group controlId="phone">
-              <Form.Label>Phone</Form.Label>
+              <Form.Label>Phone number:</Form.Label>
               <Form.Control
                 type="tel"
-                placeholder="Enter phone"
+                placeholder="Enter phone number"
                 name="phone"
                 value={formik.values.phone}
                 onChange={formik.handleChange}
@@ -189,10 +189,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
             </Form.Group>
 
             <Form.Group controlId="address">
-              <Form.Label>Address</Form.Label>
+              <Form.Label>Business address:</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter address"
+                placeholder="Enter business address"
                 name="address"
                 value={formik.values.address}
                 onChange={formik.handleChange}
@@ -205,10 +205,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
             </Form.Group>
 
             <Form.Group controlId="state">
-              <Form.Label>State</Form.Label>
+              <Form.Label>Country:</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter state"
+                placeholder="Enter business country"
                 name="state"
                 value={formik.values.state}
                 onChange={formik.handleChange}

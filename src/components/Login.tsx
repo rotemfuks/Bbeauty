@@ -16,7 +16,13 @@ function Login() {
     initialValues: { email: "", password: "" },
     validationSchema: yup.object({
       email: yup.string().required().email(),
-      password: yup.string().required().min(8),
+      password: yup
+        .string()
+        .required()
+        .matches(
+          /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[\]:;<>,.?/~_+\-=|\\]).{8,32}$/,
+          "Password must contain at least one digit, one lowercase letter, one uppercase letter, and one special character from [*.!@$%^&(){}[]:;<>,.?/~_+-=|\\] and be between 8 and 32 characters long"
+        ),
     }),
     onSubmit(values) {
       checkUser(values as User)

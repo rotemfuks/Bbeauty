@@ -77,23 +77,30 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ cards }) => {
               <CardBs.Footer className={styles.cardActions}>
                 {user?.isAdmin && (
                   <>
-                    <Button onClick={() => card.id && onEditClick(card.id)}>
+                    <Button
+                      onClick={() => card.id && onEditClick(card.id)}
+                      className={styles.cardCrud}
+                    >
                       <BsFillPencilFill />
                     </Button>
-                    <Button onClick={() => card.id && onDeleteClick(card.id)}>
+                    <Button
+                      onClick={() => card.id && onDeleteClick(card.id)}
+                      className={styles.cardCrud}
+                    >
                       <BsFillTrashFill />
                     </Button>
                   </>
                 )}
                 {user && (
                   <Button
+                    className={styles.cardCrud}
                     onClick={() => card.id && onFavoriteClick(card.id)}
                     active={!!card.id && favoriteCardIds.includes(card.id)}
                   >
                     <BsFillHeartFill />
                   </Button>
                 )}
-                <Button>
+                <Button className={styles.cardCrud}>
                   <a href={`tel:${card.phone}`}>
                     <BsFillTelephoneFill />
                   </a>
