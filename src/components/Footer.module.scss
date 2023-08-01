@@ -1,0 +1,36 @@
+.footer {
+  padding: 20px 0;
+  //   bottom: 0;
+  background-color: #dbabbb;
+  color: black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+
+  .footerColumn {
+    margin-bottom: 20px;
+
+    h5 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 2.3rem;
+    }
+  }
+}
+
+.logoutInButton {
+  background-color: #d3c3c3;
+  border: black;
+  font-size: 1.2rem;
+  color: palevioletred;
+  margin-right: 2px;
+  margin-top: 2.3rem;
+}
+
+.logoutInButton:hover {
+  background-color: palevioletred;
+  color: #d3c3c3;
+}
