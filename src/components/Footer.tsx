@@ -1,15 +1,24 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 import styles from "./Footer.module.scss";
+import { LoginContext } from "../context/LoginContext";
 import {
   BsFillFunnelFill,
   BsFillHeartFill,
   BsCardHeading,
 } from "react-icons/bs";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 interface FooterProps {}
 
 const Footer: FunctionComponent<FooterProps> = () => {
+  const { user, logout } = useContext(LoginContext);
+
+  const navigate = useNavigate();
+
+  const onLogoutClick = () => {
+    logout();
+    navigate("/login");
+  };
   return (
     <footer className={styles.footer}>
       <Container>
@@ -53,10 +62,13 @@ const Footer: FunctionComponent<FooterProps> = () => {
               {/* Add your favorites content here */}
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6}>
-            <Button className={styles.logoutInButton}>Register</Button>
-            <Button className={styles.logoutInButton}>Log In</Button>
-          </Col>
+          {user && (
+            <Col lg={3} md={6} sm={6}>
+              <Button className={styles.logoutInButton} onClick={onLogoutClick}>
+                Log Out
+              </Button>
+            </Col>
+          )}
         </Row>
       </Container>
     </footer>
