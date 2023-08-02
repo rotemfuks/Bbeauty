@@ -3,13 +3,23 @@
 }
 
 .aboutTitle {
-  font-size: 3.5rem;
+  // font-size: 3.5rem;
+  // text-align: center;
+  // text-decoration: underline;
+  // padding-bottom: 1rem;
+  // font-weight: bold;
   text-align: center;
-  text-decoration: underline;
+  font-style: italic;
+  font-family: "Playfair Display", serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  word-spacing: 1px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   padding-bottom: 1rem;
-  font-weight: bold;
 }
 
 .paragraph {
   padding-bottom: 1.5rem;
+  font-size: 1.1rem;
 }

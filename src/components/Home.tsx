@@ -1,10 +1,11 @@
-import { FunctionComponent, useContext, useEffect } from "react";
+import { FunctionComponent, useContext } from "react";
 import BusinessCards from "./BusinessCards";
 import { Button } from "react-bootstrap";
 import { BsBuildingAdd } from "react-icons/bs";
 import { LoginContext } from "../context/LoginContext";
 import { useNavigate } from "react-router-dom";
 import { CardContext } from "../context/CardContext";
+import styles from "./Home.module.scss";
 interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {
@@ -18,8 +19,8 @@ const Home: FunctionComponent<HomeProps> = () => {
 
   return (
     <>
-      <h1> Home Page</h1>
-      <div>
+      <h2 className={styles.title}> Bbeauty</h2>
+      <div className={styles.paragraph}>
         Welcome to our cosmetics business card showcase! Step into a world of
         stunning and captivating designs tailored exclusively for the cosmetics
         industry. Whether you're a makeup artist, hairstylist, beauty salon
