@@ -41,27 +41,32 @@ const Footer: FunctionComponent<FooterProps> = () => {
               {/* Add your about content here */}
             </div>
           </Col>
-          <Col lg={2} md={6} sm={6}>
-            <div className={styles.footerColumn}>
-              <Link to={"my-cards"}>
-                <h5>
-                  <BsCardHeading />
-                  My Cards
-                </h5>
-              </Link>
-              {/* Add your my cards content here */}
-            </div>
-          </Col>
-          <Col lg={2} md={6} sm={6}>
-            <div className={styles.footerColumn}>
-              <Link to={"favorites"}>
-                <h5>
-                  <BsFillHeartFill /> Favorites
-                </h5>
-              </Link>
-              {/* Add your favorites content here */}
-            </div>
-          </Col>
+          {user?.isBusiness && (
+            <Col lg={2} md={6} sm={6}>
+              <div className={styles.footerColumn}>
+                <Link to={"my-cards"}>
+                  <h5>
+                    <BsCardHeading />
+                    My Cards
+                  </h5>
+                </Link>
+                {/* Add your my cards content here */}
+              </div>
+            </Col>
+          )}
+          {user && (
+            <Col lg={2} md={6} sm={6}>
+              <div className={styles.footerColumn}>
+                <Link to={"favorites"}>
+                  <h5>
+                    <BsFillHeartFill /> Favorites
+                  </h5>
+                </Link>
+                {/* Add your favorites content here */}
+              </div>
+            </Col>
+          )}
+
           {user && (
             <Col lg={3} md={6} sm={6}>
               <Button className={styles.logoutInButton} onClick={onLogoutClick}>
