@@ -30,24 +30,36 @@ export function Navigation() {
 
       <Navbar.Collapse>
         <Nav className="mr-auto">
-          <Nav.Link as={NavLink} to="/about">
+          <Nav.Link as={NavLink} to="/about" style={{ fontSize: "1.3rem" }}>
             About
           </Nav.Link>
 
           {user && (
             <>
-              <Nav.Link as={NavLink} to="/favorites">
+              <Nav.Link
+                as={NavLink}
+                to="/favorites"
+                style={{ fontSize: "1.1rem" }}
+              >
                 Favorites
               </Nav.Link>
 
               {user.isBusiness && (
-                <Nav.Link as={NavLink} to="/my-cards">
+                <Nav.Link
+                  as={NavLink}
+                  to="/my-cards"
+                  style={{ fontSize: "1.1rem" }}
+                >
                   My Cards
                 </Nav.Link>
               )}
 
               {user.isAdmin && (
-                <Nav.Link as={NavLink} to="/sandbox">
+                <Nav.Link
+                  as={NavLink}
+                  to="/sandbox"
+                  style={{ fontSize: "1.1rem" }}
+                >
                   Sandbox
                 </Nav.Link>
               )}
@@ -58,10 +70,14 @@ export function Navigation() {
         <div className={styles.actions}>
           {!user ? (
             <>
-              <Nav.Link as={NavLink} to="/login">
+              <Nav.Link as={NavLink} to="/login" style={{ fontSize: "1.1rem" }}>
                 Login
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/register">
+              <Nav.Link
+                as={NavLink}
+                to="/register"
+                style={{ fontSize: "1.1rem" }}
+              >
                 Register
               </Nav.Link>
             </>
