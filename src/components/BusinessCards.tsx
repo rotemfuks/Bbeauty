@@ -12,6 +12,7 @@ import { LoginContext } from "../context/LoginContext";
 import { deleteCard } from "../services/cardService";
 import { Link, useNavigate } from "react-router-dom";
 import { FavoriteContext } from "../context/FavoritesContext";
+import { successMsg } from "../services/feedbacksService";
 
 interface BusinessCardsProps {
   cards: Card[];
@@ -43,6 +44,7 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ cards }) => {
       removeFromFavorite(cardId);
     } else {
       addToFavorite(cardId);
+      successMsg("Card added to favorites");
     }
   };
 
