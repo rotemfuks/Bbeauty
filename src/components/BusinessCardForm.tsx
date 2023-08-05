@@ -15,6 +15,7 @@ interface NewCardValues {
   alt: string;
   name: string;
   description: string;
+  longDescription: string;
   email: string;
   phone: string;
   address: string;
@@ -33,6 +34,7 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     alt: "",
     name: "",
     description: "",
+    longDescription: "",
     email: "",
     phone: "",
     address: "",
@@ -44,7 +46,16 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     image: yup.string().required().min(2),
     alt: yup.string().required().min(3),
     name: yup.string().required().min(4),
-    description: yup.string().required().min(10),
+    description: yup
+      .string()
+      .required()
+      .min(10, "must be longer than 10")
+      .max(35, "cannot be more than 35"),
+    longDescription: yup
+      .string()
+      .required()
+      .min(50, "must be longer")
+      .max(200, "cannot be longer"),
     email: yup.string().required().email(),
     phone: yup.number().required().min(10),
     address: yup.string().required().min(7),
@@ -140,10 +151,10 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
             </Form.Group>
 
             <Form.Group controlId="description">
-              <Form.Label>Business description:</Form.Label>
+              <Form.Label>Short business description:</Form.Label>
               <Form.Control
                 as="textarea"
-                rows={4}
+                rows={3}
                 placeholder="Enter business description"
                 name="description"
                 value={formik.values.description}
@@ -155,6 +166,25 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
               />
               <Form.Control.Feedback type="invalid">
                 {formik.errors.description}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="longDescription">
+              <Form.Label>Long business description:</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={5}
+                placeholder="Enter long business description"
+                name="longDescription"
+                value={formik.values.longDescription}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                isInvalid={Boolean(
+                  formik.touched.longDescription &&
+                    formik.errors.longDescription
+                )}
+              />
+              <Form.Control.Feedback type="invalid">
+                {formik.errors.longDescription}
               </Form.Control.Feedback>
             </Form.Group>
 

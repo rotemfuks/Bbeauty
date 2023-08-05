@@ -3,6 +3,7 @@ export interface Card {
   image: string;
   alt?: string;
   description: string;
+  longDescription: string;
   phone: string;
   address: string;
   email: string;

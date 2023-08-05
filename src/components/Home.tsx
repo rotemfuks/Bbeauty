@@ -28,9 +28,8 @@ const Home: FunctionComponent<HomeProps> = () => {
         business cards that exude elegance and professionalism.
       </div>
       <BusinessCards cards={cards} />
-
       {user?.isBusiness && (
-        <Button onClick={onClickAddCard}>
+        <Button onClick={onClickAddCard} className={styles.button}>
           <BsBuildingAdd /> Add card
         </Button>
       )}

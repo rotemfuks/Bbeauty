@@ -63,6 +63,7 @@
       "alt": "nails",
       "name": "nails by michal",
       "description": "nice and calm nail clinic. we offer good prices and great work. we have 3 workers ",
+      "longDescription": "dfghjklkjh  gfdfghjklkjh gfdfghjkjbnkjdfghjk lkjhgfdfg hjklkj hgfdf ghjkjbnkj dfghjklkj hgfdfghjkl kjhgfdfgh jkjbnkjdf ghjklkjh gfdfghjklkjhgfd fghjkjbnkjdf ghjklkjhgfdfghjkl kjhgfdf ghjkjbnkjdfgh jklkjhgfd fghjklk jhgfd",
       "email": "michal@gmail.com",
       "phone": "05432599393",
       "address": "Tel Aviv",
@@ -76,6 +77,7 @@
       "alt": "pepole face",
       "name": "Facial Treatment",
       "description": "we offer our clients facial treatment with the best doctors out there. lowest price.",
+      "longDescription": "dfghjklkjh  gfdfghjklkjh gfdfghjkjbnkjdfghjk lkjhgfdfg hjklkj hgfdf ghjkjbnkj dfghjklkj hgfdfghjkl kjhgfdfgh jkjbnkjdf ghjklkjh gfdfghjklkjhgfd fghjkjbnkjdf ghjklkjhgfdfghjkl kjhgfdf ghjkjbnkjdfgh jklkjhgfd fghjklk jhgfd",
       "email": "facialHolon@gmail.com",
       "phone": "0538685949",
       "address": "Hakishon st.4 Holon",
@@ -89,6 +91,7 @@
       "alt": "make up pallete",
       "name": "Make Up by sasha",
       "description": "professional make up artist. with 4 years experience in make up for events and brides. ",
+      "longDescription": "dfghjklkjh  gfdfghjklkjh gfdfghjkjbnkjdfghjk lkjhgfdfg hjklkj hgfdf ghjkjbnkj dfghjklkj hgfdfghjkl kjhgfdfgh jkjbnkjdf ghjklkjh gfdfghjklkjhgfd fghjkjbnkjdf ghjklkjhgfdfghjkl kjhgfdf ghjkjbnkjdfgh jklkjhgfd fghjklk jhgfd",
       "email": "makeupSasha@gmail.com",
       "phone": "0542939959",
       "address": "Rishon Lezion",
@@ -96,6 +99,20 @@
       "zipCode": "685944",
       "userId": 3,
       "id": 4
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Harry_Potter_wordmark.svg",
+      "alt": "zona",
+      "name": "Rotem Fuks",
+      "description": "dfghjklkjhgfdfghjklkjhgfdfghjkjbnkj",
+      "longDescription": "dfghjklkjh  gfdfghjklkjh gfdfghjkjbnkjdfghjk lkjhgfdfg hjklkj hgfdf ghjkjbnkj dfghjklkj hgfdfghjkl kjhgfdfgh jkjbnkjdf ghjklkjh gfdfghjklkjhgfd fghjkjbnkjdf ghjklkjhgfdfghjkl kjhgfdf ghjkjbnkjdfgh jklkjhgfd fghjklk jhgfd",
+      "email": "bar74064@gmail.com",
+      "phone": "0547424641",
+      "address": "HAKISHON 7 ST",
+      "state": "Israel",
+      "zipCode": "7524507",
+      "userId": 2,
+      "id": 5
     }
   ]
 }
