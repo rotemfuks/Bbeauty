@@ -50,7 +50,7 @@ const BusinessCards: React.FC<BusinessCardsProps> = ({ cards }) => {
     <div className={styles.cardsContainer}>
       <Row className={styles.businessCardsRow}>
         {cards.map((card, index) => (
-          <Col key={index} xs={12} sm={6} md={4}>
+          <Col key={index} xs={12} sm={6} md={4} className={styles.padding}>
             <CardBs className={styles.businessCard}>
               <CardBs.Body>
                 <div className={styles.imageContainer}>
