@@ -1,0 +1,123 @@
+// .imageContainer {
+//   width: 30vw;
+//   height: 40;
+// }
+
+.all {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.aboutus {
+  width: 100%;
+}
+
+.aboutus h1 {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 50px;
+  font-family: "Pattaya", sans-serif;
+}
+
+.aboutus h1::after {
+  content: "";
+  height: 5px;
+  width: 200px;
+  background-color: #70c02d;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+.wrapper {
+  padding: 0px 60px;
+  margin: 60px auto;
+}
+
+.content {
+  width: 60%;
+  float: left;
+  text-align: left;
+  padding: 0px 30px;
+}
+
+.content h3 {
+  color: #222;
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+}
+
+.content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #646262;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.content .button {
+  margin-top: 40px;
+}
+
+.content .button a {
+  color: #fff;
+  background-color: #70c02d;
+  border: 1px solid#A852A9;
+  padding: 10px 35px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.content .button a:hover {
+  background-color: #fff;
+  color: #a852a9;
+}
+
+.imagesection {
+  width: 40%;
+  float: right;
+  padding: 0px 30px;
+  transition: transform 0.2s;
+}
+
+.imagesection:hover {
+  transform: scale(1.1);
+}
+
+.imagesection img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .aboutus {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .aboutus h1 {
+    font-size: 32px;
+  }
+  .content {
+    width: 100%;
+    float: none;
+  }
+  .content .button {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .content .button a {
+    padding: 8px 25px;
+  }
+  .imagesection {
+    float: none;
+    width: 100%;
+    margin-top: 25px;
+  }
+}
