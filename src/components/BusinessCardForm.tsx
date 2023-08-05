@@ -86,6 +86,8 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
 
   return (
     <Container>
+      <h1 className={styles.title}> Add Business Card</h1>
+
       <Row className="justify-content-center">
         <Col md={8}>
           <Form onSubmit={formik.handleSubmit} className={styles.cardForm}>

@@ -40,7 +40,7 @@ function Login() {
   return (
     <div className={styles.loginPage}>
       <form onSubmit={formik.handleSubmit}>
-        <h3 className="display-3">Login</h3>
+        <h3 className={styles.title}>Login</h3>
 
         <div className="form-floating mb-3">
           <input

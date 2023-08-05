@@ -46,3 +46,17 @@ body {
 .links:hover {
   opacity: 1;
 }
+
+.logoutButton {
+  background-color: #dbabbb;
+  color: black;
+  font-size: 1.2rem;
+
+  border: 1px solid #fff;
+}
+.logoutButton:hover {
+  background-color: #d992aa;
+  color: black;
+
+  border: 1px solid #fff;
+}

@@ -30,7 +30,7 @@ export function Navigation() {
 
       <Navbar.Collapse>
         <Nav className="mr-auto">
-          <Nav.Link as={NavLink} to="/about" style={{ fontSize: "1.3rem" }}>
+          <Nav.Link as={NavLink} to="/about" style={{ fontSize: "1.1rem" }}>
             About
           </Nav.Link>
 
@@ -89,6 +89,7 @@ export function Navigation() {
               </Button>
             </>
           )}
+
           <ThemeButton />
         </div>
       </Navbar.Collapse>

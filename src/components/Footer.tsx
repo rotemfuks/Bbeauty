@@ -2,11 +2,7 @@ import { FunctionComponent, useContext } from "react";
 import styles from "./Footer.module.scss";
 
 import { LoginContext } from "../context/LoginContext";
-// import {
-//   BsFillFunnelFill,
-//   BsFillHeartFill,
-//   BsCardHeading,
-// } from "react-icons/bs";
+
 import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 interface FooterProps {}
@@ -51,7 +47,9 @@ const Footer: FunctionComponent<FooterProps> = () => {
 
         {user && (
           <li>
-            <Button onClick={onLogoutClick}> log out</Button>
+            <Button onClick={onLogoutClick} className={styles.logoutButton}>
+              log out
+            </Button>
           </li>
         )}
       </ul>
