@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Button, Card as CardBs, Col, Row } from "react-bootstrap";
-import styles from "./BusinessCards.module.scss";
+import styles from "../styles/BusinessCards.module.scss";
 import { Card } from "../interfaces/Card";
 import {
   BsFillTrashFill,

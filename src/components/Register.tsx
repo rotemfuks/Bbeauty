@@ -7,7 +7,7 @@ import { errorMsg, successMsg } from "../services/feedbacksService";
 import { LoginContext } from "../context/LoginContext";
 import { Form } from "react-bootstrap";
 
-import styles from "./Register.module.scss";
+import styles from "../styles/Register.module.scss";
 
 interface RegisterProps {}
 const Register: FunctionComponent<RegisterProps> = () => {
@@ -44,7 +44,7 @@ const Register: FunctionComponent<RegisterProps> = () => {
         isAdmin: false,
       })
         .then((res) => {
-          navigate("/home");
+          navigate("/");
           successMsg(`${values.email} wes registered and logged in`);
           setUser(res.data);
         })

@@ -8,7 +8,7 @@ import { Navigation } from "./components/Navigation";
 import { useContext, useEffect } from "react";
 
 import "./styles/main.scss";
-import styles from "./App.module.scss";
+import styles from "./styles/App.module.scss";
 import { ThemeContext } from "./context/ThemeContext";
 import Favorites from "./components/Favorites";
 import { About } from "./components/About";
@@ -35,7 +35,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/my-cards" element={<MyCards />} />
             <Route path="/favorites" element={<Favorites />} />

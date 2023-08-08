@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button, Nav, Navbar } from "react-bootstrap";
 
-import styles from "./Navigation.module.scss";
+import styles from "../styles/Navigation.module.scss";
 import { ThemeButton } from "./ThemeButton";
 import { useContext, useState } from "react";
 import { LoginContext } from "../context/LoginContext";
@@ -22,7 +22,7 @@ export function Navigation() {
 
   return (
     <Navbar expanded={isExpended} className={`${styles.navbar}`} expand="lg">
-      <Navbar.Brand as={NavLink} to="/home" className={styles.logo}>
+      <Navbar.Brand as={NavLink} to="/" className={styles.logo}>
         Bbeauty
       </Navbar.Brand>
 

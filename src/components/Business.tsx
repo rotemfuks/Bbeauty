@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { Card } from "../interfaces/Card";
 import { getCardDetails } from "../services/cardService";
-import styles from "./Business.module.scss";
+import styles from "../styles/Business.module.scss";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
 interface BusinessPageProps {}

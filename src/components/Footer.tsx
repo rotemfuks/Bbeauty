@@ -1,5 +1,5 @@
 import { FunctionComponent, useContext } from "react";
-import styles from "./Footer.module.scss";
+import styles from "../styles/Footer.module.scss";
 
 import { LoginContext } from "../context/LoginContext";
 
@@ -20,7 +20,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
     <section className={styles.footer}>
       <ul className={styles.list}>
         <li>
-          <Link to={"/home"} className={styles.links}>
+          <Link to={"/"} className={styles.links}>
             Home
           </Link>
         </li>

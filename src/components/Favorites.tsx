@@ -2,8 +2,7 @@ import { FunctionComponent, useContext } from "react";
 import BusinessCards from "./BusinessCards";
 import { FavoriteContext } from "../context/FavoritesContext";
 import { CardContext } from "../context/CardContext";
-import styles from "./Favorites.module.scss";
-
+import styles from "../styles/FavoritesCard.module.scss";
 interface FavoritesProps {}
 
 const Favorites: FunctionComponent<FavoritesProps> = () => {

@@ -2,7 +2,7 @@ import { FunctionComponent, useContext } from "react";
 import BusinessCards from "./BusinessCards";
 import { LoginContext } from "../context/LoginContext";
 import { CardContext } from "../context/CardContext";
-import styles from "./Favorites.module.scss";
+import styles from "../styles/FavoritesCard.module.scss";
 interface CardsProps {}
 
 const MyCards: FunctionComponent<CardsProps> = () => {

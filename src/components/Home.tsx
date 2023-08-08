@@ -5,7 +5,7 @@ import { BsBuildingAdd } from "react-icons/bs";
 import { LoginContext } from "../context/LoginContext";
 import { useNavigate } from "react-router-dom";
 import { CardContext } from "../context/CardContext";
-import styles from "./Home.module.scss";
+import styles from "../styles/Home.module.scss";
 interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {

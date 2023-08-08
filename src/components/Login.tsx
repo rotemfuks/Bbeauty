@@ -7,7 +7,7 @@ import { errorMsg, successMsg } from "../services/feedbacksService";
 import { LoginContext } from "../context/LoginContext";
 import User from "../interfaces/User";
 
-import styles from "./Login.module.scss";
+import styles from "../styles/Login.module.scss";
 
 function Login() {
   const { setUser } = useContext(LoginContext);
@@ -28,7 +28,7 @@ function Login() {
       checkUser(values as User)
         .then((res) => {
           if (res.data.length) {
-            navigate("/home");
+            navigate("/");
             successMsg(`youre logged in as ${values.email}`);
             setUser(res.data[0]);
           } else errorMsg("wrong email or password");
