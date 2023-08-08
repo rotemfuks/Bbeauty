@@ -49,13 +49,13 @@ const BusinessCardForm: React.FC<NewCardFormProps> = () => {
     description: yup
       .string()
       .required()
-      .min(10, "must be longer than 10")
-      .max(35, "cannot be more than 35"),
+      .min(60, "Must be longer than 60 lettes")
+      .max(88, "Must be shorter than 88 lettes"),
     longDescription: yup
       .string()
       .required()
-      .min(50, "must be longer")
-      .max(200, "cannot be longer"),
+      .min(250, "Must be longer than 250 lettes")
+      .max(320, "Must be shorter than 320 letters"),
     email: yup.string().required().email(),
     phone: yup.number().required().min(10),
     address: yup.string().required().min(7),

@@ -46,23 +46,6 @@ export function About() {
           6. If you are intrested you can click on the sun icon on the top right
           and change the app to be on dark mode.
         </div>
-
-        {/* 
-        <div className={styles.paragraph}>
-          We understand that every detail matters in the world of beauty and
-          aesthetics, and our commitment to quality extends to printing options.
-          Choose from a variety of finishes and premium paper types that
-          complement your brand's sophistication and make your cards stand out
-          from the rest. Elevate your presence in the cosmetics industry with
-          business cards that embody your passion and professionalism. Join our
-          community of inspired professionals who have already embraced the
-          magic of our cosmetics business cards, and let your networking efforts
-          flourish like never before.
-        </div>
-        <div className={styles.paragraph}>
-          It's time to make your mark with cards that leave a lasting impression
-          and open doors to endless possibilities in the world of beauty.
-        </div> */}
       </div>
     </div>
   );

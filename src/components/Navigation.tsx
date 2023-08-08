@@ -53,16 +53,6 @@ export function Navigation() {
                   My Cards
                 </Nav.Link>
               )}
-
-              {user.isAdmin && (
-                <Nav.Link
-                  as={NavLink}
-                  to="/sandbox"
-                  style={{ fontSize: "1.1rem" }}
-                >
-                  Sandbox
-                </Nav.Link>
-              )}
             </>
           )}
         </Nav>
