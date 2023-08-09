@@ -1,35 +1,20 @@
-# Getting Started with Create React App
+# Bbeauty- React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to our captivating beauty business website, where the art of aesthetics meets cutting-edge technology. Crafted with React and an array of diverse libraries, our platform is a harmonious blend of innovation and elegance, designed to elevate your beauty experience.
 
-## Available Scripts
+## Important
 
-In the project directory, you can run:
+This was a finals project and most of the features that are using the api calls will not work because the backend and the database was in mad up data base. if you want to run all the features you need to run this command in the terminal (json-server --watch db.json --port 8000).
 
-### `npm start`
+### Installation
+1.Clone this repository: git clone.
+2.Navigate to the project directory.
+3.Install the dependencies: npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
+### Usage
+1.run this command "json-server --watch db.json --port 8000".
+2.run npm start.
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
