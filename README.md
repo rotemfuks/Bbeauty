@@ -7,9 +7,9 @@ Welcome to our captivating beauty business website, where the art of aesthetics 
 This was a finals project and most of the features that are using the api calls will not work because the backend and the database was in mad up data base. if you want to run all the features you need to run this command in the terminal (json-server --watch db.json --port 8000).
 
 ### Installation
-1.Clone this repository: git clone.
-2.Navigate to the project directory.
-3.Install the dependencies: npm install
+1.Clone this repository: git clone. <br>
+2.Navigate to the project directory. <br>
+3.Install the dependencies: npm install <br>
 
 
 ### Usage
